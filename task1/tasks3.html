@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="index1.css">
+   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+   <title>Завдання1</title>
+   <style>
+      .test1{
+         color: blueviolet;
+         font-size: 24px;
+         text-decoration: underline;
+      }
+      .text{
+         color: rgb(172, 14, 27);
+      }
+   </style> 
+</head>
+
+  
+
+<!------=====================Завдання #3================================---->
+
+
+<h1 class="home__text">Завдання #3</h1>
+<h2>Задано початок та кінець діапазону. При натисканні на кнопку випадковим чином генерувати значення з вказаного діапазону та відображати його.
+</h2>
+
+<div id="root3"></div>
+
+<script type="text/babel">
+  function MyNumberRandom() {
+    const [num1, setNum1] = React.useState(0);
+    const [num2, setNum2] = React.useState(0);
+    const [randomNumberValue, setRandomNumberValue] = React.useState(null);
+
+    function eventNum1(e) {
+      setNum1(Number(e.target.value));
+    }
+
+    function eventNum2(e) {
+      setNum2(Number(e.target.value));
+    }
+
+    function generateRandom(min, max) {
+      return min + Math.floor(Math.random() * (max - min + 1));
+    }
+
+    function eventRandomNumber() {
+      // перевірка, чи діапазон правильний
+      if (num1 <= num2) {
+        setRandomNumberValue(generateRandom(num1, num2));
+} else {
+        setRandomNumber("Помилка: мінімум > максимум");
+      }
+    }
+
+    return (
+      <React.Fragment>
+        <div>
+          <label >
+            Початок: <input className="input-title" type="number" value={num1} onChange={eventNum1} />
+          </label>
+          </div>
+         <div>
+          <label>
+            Кінець: <input className="input-title" type="number" value={num2} onChange={eventNum2} />
+          </label>
+          </div>
+          <div>
+          <button onClick={eventRandomNumber}>Відобразити</button>
+          {randomNumberValue !== null && <p>Результат: {randomNumberValue}</p>}
+        </div>
+      </React.Fragment>
+    );
+   }
+
+  const root3 = ReactDOM.createRoot(document.getElementById("root3"));
+  root3.render(<MyNumberRandom />);
+</script>
+ 
+</body>
+
+
+</html>

@@ -1,0 +1,141 @@
+
+.class {
+    background-color: rgba(218, 206, 206, 0.603);
+    max-width: 800px;
+    margin: 0 auto;
+ }
+ 
+ h1 {
+    color: rgb(111, 47, 184);
+    font-size: 40px;
+    background-color: blanchedalmond;
+    padding: 20px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid rgb(145, 106, 106);
+ }
+ 
+ h2 {
+    color: aquamarine;
+    font-size: 40px;
+    background-color: blanchedalmond;
+ 
+ }
+ 
+ h3 {
+ 
+ 
+    max-width: 150px;
+    background-color: #edec14eb;
+    padding: 5px 10px;
+    font-size: 20px;
+    box-shadow: 4px 2px #8f8f2b;
+    letter-spacing: 3px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.2s;
+ }
+ 
+ h3:hover {
+    background-color: rgb(126, 197, 32);
+ }
+ 
+ a:hover {
+    color: antiquewhite;
+ 
+ }
+ 
+ p {
+    background-color: bisque;
+    color: brown;
+ }
+ 
+ a {
+    text-decoration: none;
+    text-transform: uppercase;
+ }
+ 
+ .content-flex {
+    display: flex;
+    gap: 40px;
+    background-color: #8f8f2b;
+ }
+
+
+
+
+/*div{background-color: aquamarine;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 350px;
+    margin-bottom: 50px;
+}*/
+
+body{
+background-color: antiquewhite;
+margin: 0 auto;    
+}
+h2{
+    max-width: 650px;
+   margin: 0 auto;
+   padding: 20px;
+   color: rgb(73, 75, 71);
+   font-size: 24px;
+}
+.home__text{
+    color: rgb(226, 20, 133);
+    text-align: center;
+    text-transform: uppercase;
+   
+}
+#root{background-color: rgb(201, 216, 172);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 1050px;
+    color: rgb(224, 227, 233);
+    margin: 0 auto  ;
+    font-size: 24px;
+   
+}
+
+.bus-container{
+    background-color: rgb(57, 67, 116);
+    border-radius: 10px;
+    padding: 20px;
+}
+input{
+    background-color: aqua;
+    font-size: 18px;
+}
+
+#root2,#root3{background-color: rgb(209, 172, 216);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 1050px;
+    color: rgb(10, 34, 167);
+    margin: 0 auto  ;
+    font-size: 24px;
+    text-align: center;
+}
+
+.input-title{
+    background-color: rgb(210, 255, 127);
+    padding: 5px ;
+    margin: 10px;
+    
+}
+button{
+    background-color: rgb(15, 57, 119);
+    color: bisque;
+    padding: 10px 8px;
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: all 0.5s;
+    
+}
+button:hover{
+    background-color: rgb(55, 120, 218);
+   color: rgb(219, 192, 118);
+}

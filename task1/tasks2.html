@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="index1.css">
+   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+   <title>Завдання1</title>
+   <style>
+      .test1{
+         color: blueviolet;
+         font-size: 24px;
+         text-decoration: underline;
+      }
+      .text{
+         color: rgb(172, 14, 27);
+      }
+   </style> 
+</head>
+
+  
+
+
+
+<!------=====================Завдання #2================================----->
+
+
+<h1 class="home__text">Завдання #2</h1>
+<h2>Вводиться номер місяця. Автоматично виводити рекомендований одяг (зима – пальто, літо – шорти ….). Також автоматично виводити зображення з відповідним зображенням лісу (зима – ліс зі снігом, осінь – жовтий ліс, …).</h2>
+<div id="root2"></div>
+
+<script type="text/babel">
+  function NumberOfTheMonthIsEntered({ month, clothing, imgSrc }) {
+    return (
+      <div className="numberOfTheMonthIsEntered">
+        <h1>Номер місяця: {month}</h1>
+        <h2>Рекомендований одяг: {clothing}</h2>
+        <img style={{ width: "600px" }} src={imgSrc} alt="Рекомендований одяг" />
+      </div>
+    );
+  }
+
+  function App() {
+    const [month, setMonth] = React.useState(1);
+
+    const clothingData = {
+      1: { clothing: "пальто", imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9wWDbDXvVTGZClmDPQrPWWjr9gtPSVHgCeQ&s" },
+      2: { clothing: "пальто", imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9wWDbDXvVTGZClmDPQrPWWjr9gtPSVHgCeQ&s" },
+      3: { clothing: "Вітровка", imgSrc: "https://lh3.googleusercontent.com/proxy/umMUNZ-xXdsOaj6VLL7-KO9luoJO2gnJGzd7ZE6-jnzOR1CekrM9plQmfn6y3eKONWk9oyB-UzbRYo-t-B7HUIhw59f_P0h7qyK6gFvuvBJB7q-CV0EwFxuiX-xb9jgwoC87s4ScpmPMS8suqQ" },
+      4: { clothing: "Вітровка", imgSrc: "https://lh3.googleusercontent.com/proxy/umMUNZ-xXdsOaj6VLL7-KO9luoJO2gnJGzd7ZE6-jnzOR1CekrM9plQmfn6y3eKONWk9oyB-UzbRYo-t-B7HUIhw59f_P0h7qyK6gFvuvBJB7q-CV0EwFxuiX-xb9jgwoC87s4ScpmPMS8suqQ" },
+      5: { clothing: "Вітровка", imgSrc: "https://lh3.googleusercontent.com/proxy/umMUNZ-xXdsOaj6VLL7-KO9luoJO2gnJGzd7ZE6-jnzOR1CekrM9plQmfn6y3eKONWk9oyB-UzbRYo-t-B7HUIhw59f_P0h7qyK6gFvuvBJB7q-CV0EwFxuiX-xb9jgwoC87s4ScpmPMS8suqQ" },
+      6: { clothing: "Майка", imgSrc: "https://otdihnavse100.com.ua/img/cms/blog/karpaty/poezdka-v-verhovinu-karpaty.JPG" },
+      7: { clothing: "Майка", imgSrc: "https://otdihnavse100.com.ua/img/cms/blog/karpaty/poezdka-v-verhovinu-karpaty.JPG" },
+      8: { clothing: "Майка", imgSrc: "https://otdihnavse100.com.ua/img/cms/blog/karpaty/poezdka-v-verhovinu-karpaty.JPG" },
+      9: { clothing: "Легка куртка", imgSrc: "https://koruna.ua/wp-content/uploads/2018/07/1444932506_12074523_1692190377663952_5030979077553622769_n.jpg" }, 
+      10: { clothing: "Легка куртка", imgSrc: "https://koruna.ua/wp-content/uploads/2018/07/1444932506_12074523_1692190377663952_5030979077553622769_n.jpg" }, 
+      11: { clothing:  "Легка куртка", imgSrc: "https://koruna.ua/wp-content/uploads/2018/07/1444932506_12074523_1692190377663952_5030979077553622769_n.jpg" }, 
+      12: { clothing: "пальто",imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9wWDbDXvVTGZClmDPQrPWWjr9gtPSVHgCeQ&s" },
+    };
+
+    const currentData = clothingData[month] || { clothing: "невідомо", imgSrc: "" };
+
+    const handleChange = (e) => {
+      const value = parseInt(e.target.value);
+      if (value >= 1 && value <= 12) {
+        setMonth(value);
+      } else {
+        setMonth("");
+      }
+    };
+
+    return (
+      <div>
+        <h4>Введіть номер місяця (1-12):</h4>
+        <input
+          type="number"
+          min="1"
+          max="12"
+          value={month}
+          onChange={handleChange}
+        />
+        {month && (
+          <NumberOfTheMonthIsEntered
+            month={month}
+            clothing={currentData.clothing}
+            imgSrc={currentData.imgSrc}
+          />
+        )}
+      </div>
+    );
+  }
+
+  ReactDOM.render(<App />, document.getElementById('root2'));
+</script>
+
+ 
+</body>
+
+
+</html>
